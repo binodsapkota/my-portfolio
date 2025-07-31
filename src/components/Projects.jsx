@@ -63,6 +63,66 @@ const Projects = () => {
       category: "healthcare",
       liveUrl: "#",
       githubUrl: "#"
+    },
+    {
+      id: 7,
+      title: "Content Management System",
+      description: "Built comprehensive CMS platform for multiple clients with rich text editor, media management, SEO optimization, and multi-site support.",
+      image: "📝",
+      technologies: ["ASP.NET MVC", "SQL Server", "JavaScript", "Bootstrap", "CKEditor"],
+      category: "enterprise",
+      liveUrl: "#",
+      githubUrl: "#"
+    },
+    {
+      id: 8,
+      title: "Inventory Management System",
+      description: "Developed robust inventory tracking system with barcode scanning, real-time stock updates, supplier management, and reporting dashboard.",
+      image: "📦",
+      technologies: ["ASP.NET Core", "SQL Server", "ReactJS", "SignalR", "Barcode API"],
+      category: "enterprise",
+      liveUrl: "#",
+      githubUrl: "#"
+    },
+    {
+      id: 9,
+      title: "HR Management System",
+      description: "Built comprehensive HR platform with employee management, payroll processing, attendance tracking, and performance evaluation modules.",
+      image: "👥",
+      technologies: ["ASP.NET Core", "SQL Server", "ReactJS", "Web API", "Reporting Services"],
+      category: "enterprise",
+      liveUrl: "#",
+      githubUrl: "#"
+    },
+    {
+      id: 10,
+      title: "Real Estate Management",
+      description: "Developed property management system with listing management, client portal, document management, and financial tracking features.",
+      image: "🏠",
+      technologies: ["ASP.NET Core", "PostgreSQL", "ReactJS", "File Upload", "Payment Integration"],
+      category: "enterprise",
+      liveUrl: "#",
+      githubUrl: "#"
+    },
+    {
+      id: 11,
+      title: "School Management System",
+      description: "Built comprehensive education management platform with student records, class scheduling, grade management, and parent portal.",
+      image: "🎓",
+      technologies: ["ASP.NET Core", "SQL Server", "ReactJS", "SignalR", "Reporting"],
+      category: "enterprise",
+      liveUrl: "#",
+      githubUrl: "#"
+    },
+    {
+      id: 12,
+      title: "Restaurant POS System",
+      description: "Developed point-of-sale system with menu management, order processing, payment integration, and kitchen display system.",
+      image: "🍽️",
+      technologies: ["ASP.NET Core", "SQL Server", "ReactJS", "SignalR", "Payment Gateway"],
+      category: "enterprise",
+      liveUrl: "#",
+      githubUrl: "#"
     }
   ]
 
