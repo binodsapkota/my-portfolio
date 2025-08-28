@@ -1,0 +1,21 @@
+{
+  "name": "Binod Sapkota - Software Engineering Leader Portfolio",
+  "short_name": "Binod Sapkota",
+  "description": "Professional portfolio of Binod Sapkota - Software Engineering Leader with 10+ years experience in .NET and React development",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#667eea",
+  "theme_color": "#667eea",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/vite.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "productivity", "utilities"],
+  "lang": "en-CA",
+  "dir": "ltr"
+}
