@@ -120,7 +120,7 @@ const About = () => {
                     <div className="timeline-meta">
                       <span className="timeline-company">Smartworld Infotech Solutions Inc</span>
                       <span className="timeline-location">Canada</span>
-                      <span className="timeline-duration">December 2024 – Present</span>
+                      <span className="timeline-duration">August 2025 – Present</span>
                     </div>
                   </div>
                   <ul>
