@@ -142,8 +142,12 @@ const Projects = () => {
     <section id="projects" className="projects">
       <div className="container">
         <div className="section-header">
-          <h2 className="section-title">My Projects</h2>
+          <h2 className="section-title">My Work & Projects</h2>
           <div className="section-divider"></div>
+          <p className="section-description">
+            A showcase of enterprise solutions and custom applications I've delivered as a freelance developer. 
+            Each project demonstrates my expertise in full-stack development, security, and scalable architecture.
+          </p>
         </div>
 
         <div className="project-filters">

@@ -2,7 +2,12 @@ import { useState, useEffect } from 'react'
 
 const Hero = () => {
   const [currentText, setCurrentText] = useState(0)
-  const texts = ['Software Engineering Leader', 'Full Stack Developer', '.NET Specialist', 'React Developer']
+  const texts = [
+    "Full-Stack Developer",
+    "Engineering Lead", 
+    "Freelance Developer",
+    "Solution Architect"
+  ]
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -20,20 +25,17 @@ const Hero = () => {
   }
 
   return (
-    <section id="home" className="hero">
-      <div className="hero-container">
+    <section className="hero">
+      <div className="container">
         <div className="hero-content">
           <div className="hero-text">
             <h1 className="hero-title">
               Hi, I'm <span className="highlight">Binod Sapkota</span>
             </h1>
-            <h2 className="hero-subtitle">
-              I'm a <span className="animated-text">{texts[currentText]}</span>
-            </h2>
             <p className="hero-description">
-              Experienced Software Engineering Leader with 10+ years in full-stack development using .NET technologies, 
-              including 5+ years in engineering leadership roles. Proven track record of delivering scalable, secure, 
-              enterprise-grade applications across finance, health, and manufacturing domains.
+              Experienced Full-Stack Developer & Engineering Lead currently working at Smartworld Infotech Solutions Inc. 
+              Available for freelance projects and consulting work. Specializing in .NET technologies, React, 
+              and enterprise solutions. Ready to bring your ideas to life with scalable, secure applications.
             </p>
             <div className="hero-buttons">
               <button 
@@ -46,20 +48,15 @@ const Hero = () => {
                 className="btn btn-secondary"
                 onClick={() => scrollToSection('contact')}
               >
-                Get In Touch
+                Contact Me
               </button>
             </div>
           </div>
-          <div className="hero-image">
-            <div className="hero-avatar">
-              <div className="avatar-placeholder">
-                <span>👨‍💼</span>
-              </div>
+          <div className="hero-avatar">
+            <div className="avatar-placeholder">
+              <span>BS</span>
             </div>
           </div>
-        </div>
-        <div className="scroll-indicator">
-          <div className="scroll-arrow"></div>
         </div>
       </div>
     </section>

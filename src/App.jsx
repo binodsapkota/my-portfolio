@@ -36,7 +36,7 @@ function App() {
       </header>
       
       <main role="main">
-        <section id="hero" aria-label="Introduction">
+        <section id="home" aria-label="Introduction">
           <Hero />
         </section>
         
