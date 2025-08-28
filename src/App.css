@@ -1390,6 +1390,7 @@ section {
   font-size: 1rem;
   transition: all 0.3s ease;
   background: #f8f9fa;
+  color: gray;
 }
 
 .form-group input:focus,

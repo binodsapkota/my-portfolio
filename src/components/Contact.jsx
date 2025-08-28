@@ -1,13 +1,17 @@
 import { useState } from 'react'
-
+import {useDispatch,useSelector} from 'react-redux'
+import {addTodo} from '../features/todo/todoSlice'
 const Contact = () => {
+  
+  const todos=useSelector(state=>state.todos);
+  const dispatch=useDispatch();
   const [formData, setFormData] = useState({
-    name: '',
+    name: '',//todos[0].text,
     email: '',
     subject: '',
     message: ''
   })
-
+  
   const socialLinks = [
     { name: 'LinkedIn', url: 'https://www.linkedin.com/in/binod-sapkota-0a193475/', icon: '💼', color: '#0077b5' },
     { name: 'GitHub', url: 'https://github.com/binodsapkota', icon: '🐙', color: '#333' },
@@ -24,6 +28,8 @@ const Contact = () => {
   const handleWhatsAppSubmit = (e) => {
     e.preventDefault()
     
+    //dispatch(addTodo(formData))
+
     // Format message for WhatsApp
     const whatsappMessage = `Hello Binod! I'm interested in working with you.
 
