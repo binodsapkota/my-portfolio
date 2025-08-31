@@ -56,6 +56,7 @@ function Github() {
         <table className="github-repos-table">
           <thead>
             <tr>
+                <th>#</th>
               <th>Name</th>
               <th>Description</th>
               <th>Stars</th>
@@ -63,8 +64,9 @@ function Github() {
             </tr>
           </thead>
           <tbody>
-            {repos.map(repo => (
+            {repos.map((repo,idx) => (
               <tr key={repo.id}>
+                <td>{idx+1}</td>
                 <td>
                   <a href={repo.html_url} target="_blank" rel="noopener noreferrer">
                     {repo.name}
