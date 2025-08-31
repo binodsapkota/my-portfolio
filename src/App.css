@@ -1864,3 +1864,67 @@ section {
   font-weight: bold;
   margin-left: 0.5rem;
 }
+
+.github-repos-table {
+  width: 100%;
+  max-width: 700px;
+  border-collapse: collapse;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 1px 8px rgba(0,0,0,0.06);
+}
+
+.github-repos-table th,
+.github-repos-table td {
+  padding: 0.8rem 1rem;
+  text-align: left;
+}
+
+.github-repos-table th {
+  background: #f5f7fa;
+  color: #24292e;
+  font-weight: 600;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.github-repos-table tr {
+  border-bottom: 1px solid #e9ecef;
+}
+
+.github-repos-table tr:last-child {
+  border-bottom: none;
+}
+
+.github-repos-table td a {
+  color: #0366d6;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.github-repos-table td a:hover {
+  text-decoration: underline;
+}
+
+.github-repos-table .repo-stars {
+  color: #f1c40f;
+  font-weight: bold;
+}
+
+.github-repos-table .repo-desc {
+  color: #555;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .github-repos-table th,
+  .github-repos-table td {
+    padding: 0.5rem 0.5rem;
+    font-size: 0.95rem;
+  }
+  .github-repos-table {
+    max-width: 100%;
+    font-size: 0.95rem;
+  }
+}

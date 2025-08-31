@@ -53,16 +53,34 @@ function Github() {
       {/* Repositories Section */}
       <div className="github-repos">
         <h3>Repositories</h3>
-        <ul>
-          {repos.map(repo => (
-            <li key={repo.id}>
-              <a href={repo.html_url} target="_blank" rel="noopener noreferrer">
-                {repo.name}
-              </a>
-              <span> ★ {repo.stargazers_count}</span>
-            </li>
-          ))}
-        </ul>
+        <table className="github-repos-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Description</th>
+              <th>Stars</th>
+              <th>Link</th>
+            </tr>
+          </thead>
+          <tbody>
+            {repos.map(repo => (
+              <tr key={repo.id}>
+                <td>
+                  <a href={repo.html_url} target="_blank" rel="noopener noreferrer">
+                    {repo.name}
+                  </a>
+                </td>
+                <td className="repo-desc">{repo.description || '-'}</td>
+                <td className="repo-stars">★ {repo.stargazers_count}</td>
+                <td>
+                  <a href={repo.html_url} target="_blank" rel="noopener noreferrer">
+                    Visit
+                  </a>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </section>
   )
