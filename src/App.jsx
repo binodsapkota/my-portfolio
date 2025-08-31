@@ -7,6 +7,7 @@ import Skills from './components/Skills'
 import Projects from './components/Projects'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import Github from './components/Github'
 
 function App() {
   const [isLoading, setIsLoading] = useState(true)
@@ -54,7 +55,12 @@ function App() {
         
         <section id="contact" aria-label="Contact Information">
           <Contact />
+
         </section>
+        <section id="github" aria-label="GitHub Profile and Repositories">
+          <Github />
+        </section>
+
       </main>
       
       <footer>

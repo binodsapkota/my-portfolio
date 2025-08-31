@@ -1776,3 +1776,91 @@ section {
   background: linear-gradient(135deg, #64ffda, #00bcd4);
   box-shadow: 0 5px 15px rgba(100, 255, 218, 0.3);
 }
+.github-section {
+  background: #f5f7fa;
+  padding: 2rem;
+  border-radius: 12px;
+  margin: 2rem 0;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.github-profile-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.github-profile-info img {
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  border: 3px solid #24292e;
+}
+
+.github-profile-info h2 {
+  margin: 0.5rem 0;
+  color: #24292e;
+}
+
+.github-profile-info p {
+  margin: 0.3rem 0;
+  color: #555;
+}
+
+.github-profile-info a {
+  margin-top: 0.5rem;
+  color: #0366d6;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.github-profile-info a:hover {
+  text-decoration: underline;
+}
+
+.github-repos {
+  width: 100%;
+  max-width: 600px;
+}
+
+.github-repos h3 {
+  margin-bottom: 1rem;
+  color: #24292e;
+}
+
+.github-repos ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.github-repos li {
+  background: #fff;
+  margin-bottom: 0.7rem;
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.github-repos a {
+  color: #0366d6;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.github-repos a:hover {
+  text-decoration: underline;
+}
+
+.github-repos span {
+  color: #f1c40f;
+  font-weight: bold;
+  margin-left: 0.5rem;
+}

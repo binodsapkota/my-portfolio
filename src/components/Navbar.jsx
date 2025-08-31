@@ -34,6 +34,7 @@ const Navbar = () => {
           <a onClick={() => scrollToSection('skills')} className="nav-link">Skills</a>
           <a onClick={() => scrollToSection('projects')} className="nav-link">Projects</a>
           <a onClick={() => scrollToSection('contact')} className="nav-link">Contact</a>
+          <a onClick={() => scrollToSection('github')} className="nav-link">GitHub</a> {/* Added GitHub link */}
         </div>
 
         <div 
@@ -49,4 +50,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar 
+export default Navbar
