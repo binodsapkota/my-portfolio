@@ -425,7 +425,7 @@ body[data-theme="dark"] .avatar-glass {
 
 /* === About Section === */
 .about-section {
-  padding: 4rem 1rem;
+  padding: 6rem 1rem;
   background: linear-gradient(120deg, #f5f7fa 0%, #e2e8f0 100%);
   color: #1e293b;
   overflow: hidden;
@@ -433,6 +433,7 @@ body[data-theme="dark"] .avatar-glass {
   min-height: 100vh;
   display: flex;
   align-items: center;
+  scroll-margin-top: 80px;
 }
 
 body[data-theme="dark"] .about-section {
@@ -1151,7 +1152,7 @@ body[data-theme="dark"] .experience-item:hover .timeline-dot {
 
 /* === Skills Section === */
 .skills-section {
-  padding: 4rem 1rem;
+  padding: 6rem 1rem;
   background: linear-gradient(120deg, #f5f7fa 0%, #e2e8f0 100%);
   color: #1e293b;
   overflow: hidden;
@@ -1499,7 +1500,7 @@ body[data-theme="dark"] .expertise-tag:hover {
 
 /* === Projects Section === */
 .projects-section {
-  padding: 4rem 1rem;
+  padding: 6rem 1rem;
   background: linear-gradient(120deg, #f5f7fa 0%, #e2e8f0 100%);
   color: #1e293b;
   overflow: hidden;
@@ -1812,7 +1813,7 @@ body[data-theme="dark"] .btn-primary:hover {
 
 /* === Contact Section === */
 .contact-section {
-  padding: 4rem 1rem;
+  padding: 6rem 1rem;
   background: linear-gradient(120deg, #f5f7fa 0%, #e2e8f0 100%);
   color: #1e293b;
   overflow: hidden;
@@ -2235,7 +2236,7 @@ body[data-theme="dark"] .animate-pulse-glow {
 .github-section {
   position: relative;
   background: linear-gradient(120deg, #f5f7fa 0%, #e2e8f0 100%); /* Preserved */
-  padding: 4rem 1rem;
+  padding: 6rem 1rem;
   color: #1e293b;
   overflow: hidden;
   text-align: center;
