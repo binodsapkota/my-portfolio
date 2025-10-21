@@ -1,32 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://my-portfolio-cdwxko42s-binodsapkota96-gmailcoms-projects.vercel.app/</loc>
-    <lastmod>2024-07-31</lastmod>
+    <loc>https://binodsapkota.com/</loc>
+    <lastmod>2025-10-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
+
   <url>
-    <loc>https://my-portfolio-cdwxko42s-binodsapkota96-gmailcoms-projects.vercel.app/#about</loc>
-    <lastmod>2024-07-31</lastmod>
+    <loc>https://binodsapkota.com/#about</loc>
+    <lastmod>2025-10-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://my-portfolio-cdwxko42s-binodsapkota96-gmailcoms-projects.vercel.app/#skills</loc>
-    <lastmod>2024-07-31</lastmod>
+
+   <url>
+    <loc>https://binodsapkota.com/#experience</loc>
+    <lastmod>2025-10-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
   <url>
-    <loc>https://my-portfolio-cdwxko42s-binodsapkota96-gmailcoms-projects.vercel.app/#projects</loc>
-    <lastmod>2024-07-31</lastmod>
+    <loc>https://binodsapkota.com/#skills</loc>
+    <lastmod>2025-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://binodsapkota.com/#experience</loc>
+    <lastmod>2025-10-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
+
   <url>
-    <loc>https://my-portfolio-cdwxko42s-binodsapkota96-gmailcoms-projects.vercel.app/#contact</loc>
-    <lastmod>2024-07-31</lastmod>
+    <loc>https://binodsapkota.com/#projects</loc>
+    <lastmod>2025-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://binodsapkota.com/#contact</loc>
+    <lastmod>2025-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://binodsapkota.com/#github</loc>
+    <lastmod>2025-10-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

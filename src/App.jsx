@@ -3,6 +3,7 @@ import './App.css'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
+import Experience from './components/experience'
 import Skills from './components/Skills'
 import Projects from './components/Projects'
 import Contact from './components/Contact'
@@ -44,6 +45,10 @@ function App() {
         <section id="about" aria-label="About Binod Sapkota">
           <About />
         </section>
+
+        <section id="experience" aria-label="Work Experience and Roles">
+  <Experience />
+</section>
         
         <section id="skills" aria-label="Technical Skills and Expertise">
           <Skills />

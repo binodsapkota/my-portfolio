@@ -1,49 +1,70 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from "react"
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [theme, setTheme] = useState("light")
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50)
     }
-
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
   }, [])
+
+  useEffect(() => {
+    document.body.setAttribute("data-theme", theme)
+  }, [theme])
+
+  const toggleTheme = () => {
+    setTheme(theme === "light" ? "dark" : "light")
+  }
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId)
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
+      const topOffset = element.offsetTop
+      window.scrollTo({
+        top: topOffset, 
+        behavior: 'smooth'
+      })
     }
     setIsMobileMenuOpen(false)
   }
 
   return (
-    <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
-      <div className="nav-container">
-        <div className="nav-logo">
-          <h2>Portfolio</h2>
-        </div>
-        
-        <div className={`nav-menu ${isMobileMenuOpen ? 'active' : ''}`}>
-          <a onClick={() => scrollToSection('home')} className="nav-link">Home</a>
-          <a onClick={() => scrollToSection('about')} className="nav-link">About</a>
-          <a onClick={() => scrollToSection('skills')} className="nav-link">Skills</a>
-          <a onClick={() => scrollToSection('projects')} className="nav-link">Projects</a>
-          <a onClick={() => scrollToSection('contact')} className="nav-link">Contact</a>
-          <a onClick={() => scrollToSection('github')} className="nav-link">GitHub</a> {/* Added GitHub link */}
+    <nav className={`modern-navbar ${isScrolled ? "scrolled" : ""}`}>
+      <div className="nav-inner">
+        <h2 className="nav-logo">
+          Binod<span className="nav-highlight"> Sapkota</span>
+        </h2>
+
+        <div className={`nav-links ${isMobileMenuOpen ? "active" : ""}`}>
+          {["home", "about", "experience", "skills", "projects", "contact", "github"].map((item) => (
+            <a
+              key={item}
+              onClick={() => scrollToSection(item)}
+              className="nav-item"
+            >
+              {item.charAt(0).toUpperCase() + item.slice(1)}
+            </a>
+          ))}
         </div>
 
-        <div 
-          className={`hamburger ${isMobileMenuOpen ? 'active' : ''}`}
+        <div
+          className={`hamburger ${isMobileMenuOpen ? "active" : ""}`}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           <span></span>
           <span></span>
           <span></span>
+        </div>
+
+        <div className="theme-toggle" onClick={toggleTheme}>
+          <span className="theme-icon">
+            {theme === "light" ? "☀️" : "🌙"}
+          </span>
         </div>
       </div>
     </nav>

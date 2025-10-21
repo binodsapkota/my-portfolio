@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from "react"
 
-const GITHUB_USERNAME = 'binodsapkota'
+const GITHUB_USERNAME = "binodsapkota"
 
 function Github() {
   const [profile, setProfile] = useState(null)
@@ -19,7 +19,7 @@ function Github() {
         setProfile(profileData)
         setRepos(reposData)
       } catch (error) {
-        console.error('Error fetching GitHub data:', error)
+        console.error("Error fetching GitHub data:", error)
       } finally {
         setLoading(false)
       }
@@ -27,63 +27,83 @@ function Github() {
     fetchGithubData()
   }, [])
 
-  if (loading) return <div>Loading GitHub info...</div>
+  if (loading) {
+    return (
+      <div className="loading-container">
+        <div className="spinner"></div>
+        <p>Loading GitHub data...</p>
+      </div>
+    )
+  }
 
   return (
-    <section className="github-section">
-      {/* Profile Info Section */}
+    <section className="github-section bg-[#f0f2f5]">
+      <div className="section-header">
+        <h2 className="section-title">GitHub Overview</h2>
+        <div className="section-divider"></div>
+      </div>
+
+      {/* Profile Info */}
       {profile && (
-        <section className="github-profile-info">
-          <img src={profile.avatar_url} alt="GitHub avatar" width={100} style={{ borderRadius: '50%' }} />
-          <h2>{profile.name || profile.login}</h2>
-          <p>{profile.bio}</p>
-          <p>
-            <strong>Followers:</strong> {profile.followers} &nbsp;
-            <strong>Following:</strong> {profile.following}
-          </p>
-          <p>
-            <strong>Public Repos:</strong> {profile.public_repos}
-          </p>
-          <a href={profile.html_url} target="_blank" rel="noopener noreferrer">
+        <div className="github-profile-card animate-fade-in">
+          <img src={profile.avatar_url} alt="GitHub Avatar" className="github-avatar" />
+          <h3>{profile.name || profile.login}</h3>
+          <p className="bio">{profile.bio}</p>
+          <div className="profile-stats">
+            <p>👥 {profile.followers} Followers</p>
+            <p>⭐ {profile.following} Following</p>
+          </div>
+          <p>📦 {profile.public_repos} Public Repos</p>
+          <a
+            href={profile.html_url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="profile-link"
+          >
             View GitHub Profile
           </a>
-        </section>
+        </div>
       )}
 
-      {/* Repositories Section */}
-      <div className="github-repos">
-        <h3>Repositories</h3>
-        <table className="github-repos-table">
-          <thead>
-            <tr>
+      {/* Repositories Table */}
+      <div className="repos-container animate-slide-up">
+        <h3 className="repo-header">Repositories</h3>
+        <div className="table-wrapper">
+          <table className="repo-table">
+            <thead>
+              <tr>
                 <th>#</th>
-              <th>Name</th>
-              <th>Description</th>
-              <th>Stars</th>
-              <th>Link</th>
-            </tr>
-          </thead>
-          <tbody>
-            {repos.map((repo,idx) => (
-              <tr key={repo.id}>
-                <td>{idx+1}</td>
-                <td>
-                  <a href={repo.html_url} target="_blank" rel="noopener noreferrer">
-                    {repo.name}
-                  </a>
-                </td>
-                <td className="repo-desc">{repo.description || '-'}</td>
-                <td className="repo-stars">★ {repo.stargazers_count}</td>
-                <td>
-                  <a href={repo.html_url} target="_blank" rel="noopener noreferrer">
-                    Visit
-                  </a>
-                </td>
+                <th>Repository Name</th>
+                <th>Description</th>
+                <th>Stars</th>
+                <th>Link</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {repos.map((repo, index) => (
+                <tr key={repo.id} className="repo-row">
+                  <td>{index + 1}</td>
+                  <td className="repo-name">{repo.name}</td>
+                  <td className="repo-desc">{repo.description || "No description"}</td>
+                  <td className="repo-stars">★ {repo.stargazers_count}</td>
+                  <td>
+                    <a
+                      href={repo.html_url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="repo-link-btn"
+                    >
+                      Visit
+                    </a>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
+
+      <div className="background-glow"></div>
     </section>
   )
 }
