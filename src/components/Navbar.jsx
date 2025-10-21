@@ -23,7 +23,13 @@ const Navbar = () => {
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId)
-    if (element) element.scrollIntoView({ behavior: "smooth" })
+    if (element) {
+      const topOffset = element.offsetTop
+      window.scrollTo({
+        top: topOffset, 
+        behavior: 'smooth'
+      })
+    }
     setIsMobileMenuOpen(false)
   }
 
