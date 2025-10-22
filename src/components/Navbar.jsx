@@ -3,7 +3,9 @@ import { useState, useEffect } from "react"
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const [theme, setTheme] = useState("light")
+  const [theme, setTheme] = useState(() =>
+    window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"
+  )
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,6 +18,15 @@ const Navbar = () => {
   useEffect(() => {
     document.body.setAttribute("data-theme", theme)
   }, [theme])
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)")
+    const handleChange = (e) => {
+      setTheme(e.matches ? "dark" : "light")
+    }
+    mediaQuery.addEventListener("change", handleChange)
+    return () => mediaQuery.removeEventListener("change", handleChange)
+  }, [])
 
   const toggleTheme = () => {
     setTheme(theme === "light" ? "dark" : "light")

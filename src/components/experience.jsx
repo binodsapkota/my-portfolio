@@ -27,7 +27,7 @@ const experiences = [
       "Developed full-stack fintech and ERP platforms using ASP.NET Core and ReactJS.",
       "Led MoneyFex (UK remittance platform) with 30K+ active users.",
       "Integrated biometric KYC (Futronic, Evolis) and automated CI/CD pipelines.",
-      "Managed a 10+ person dev team, conducted code reviews, and interviews.",
+      "Managed a 30+ person dev team, conducted code reviews, and interviews.",
     ],
   },
   {
