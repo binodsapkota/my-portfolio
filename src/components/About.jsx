@@ -31,7 +31,7 @@ const About = () => {
                   <p>Years Experience</p>
                 </div>
                 <div className="stat animate-fade-in" style={{ animationDelay: '0.5s' }}>
-                  <h4>20+</h4>
+                  <h4>50+</h4>
                   <p>Projects Delivered</p>
                 </div>
                 <div className="stat animate-fade-in" style={{ animationDelay: '0.6s' }}>

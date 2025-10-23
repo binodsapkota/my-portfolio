@@ -1,31 +1,42 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
 
-const GITHUB_USERNAME = "binodsapkota"
+const GITHUB_USERNAME = "binodsapkota";
 
 function Github() {
-  const [profile, setProfile] = useState(null)
-  const [repos, setRepos] = useState([])
-  const [loading, setLoading] = useState(true)
+  const [profile, setProfile] = useState(null);
+  const [repos, setRepos] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function fetchGithubData() {
       try {
+        setLoading(true);
+
         const [profileRes, reposRes] = await Promise.all([
           fetch(`https://api.github.com/users/${GITHUB_USERNAME}`),
-          fetch(`https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated`)
-        ])
-        const profileData = await profileRes.json()
-        const reposData = await reposRes.json()
-        setProfile(profileData)
-        setRepos(reposData)
+          fetch(
+            `https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=created&direction=desc&per_page=100`
+          ),
+        ]);
+
+        if (!profileRes.ok || !reposRes.ok) {
+          throw new Error("GitHub API request failed");
+        }
+
+        const profileData = await profileRes.json();
+        const reposData = await reposRes.json();
+
+        setProfile(profileData);
+        setRepos(reposData);
       } catch (error) {
-        console.error("Error fetching GitHub data:", error)
+        console.error("Error fetching GitHub data:", error);
       } finally {
-        setLoading(false)
+        setLoading(false);
       }
     }
-    fetchGithubData()
-  }, [])
+
+    fetchGithubData();
+  }, []);
 
   if (loading) {
     return (
@@ -33,7 +44,7 @@ function Github() {
         <div className="spinner"></div>
         <p>Loading GitHub data...</p>
       </div>
-    )
+    );
   }
 
   return (
@@ -46,7 +57,11 @@ function Github() {
       {/* Profile Info */}
       {profile && (
         <div className="github-profile-card animate-fade-in">
-          <img src={profile.avatar_url} alt="GitHub Avatar" className="github-avatar" />
+          <img
+            src={profile.avatar_url}
+            alt="GitHub Avatar"
+            className="github-avatar"
+          />
           <h3>{profile.name || profile.login}</h3>
           <p className="bio">{profile.bio}</p>
           <div className="profile-stats">
@@ -75,8 +90,8 @@ function Github() {
                 <th>#</th>
                 <th>Repository Name</th>
                 <th>Description</th>
-                <th>Stars</th>
-                <th>Link</th>
+                <th>⭐ Stars</th>
+                <th>🔗 Link</th>
               </tr>
             </thead>
             <tbody>
@@ -84,7 +99,9 @@ function Github() {
                 <tr key={repo.id} className="repo-row">
                   <td>{index + 1}</td>
                   <td className="repo-name">{repo.name}</td>
-                  <td className="repo-desc">{repo.description || "No description"}</td>
+                  <td className="repo-desc">
+                    {repo.description || "No description"}
+                  </td>
                   <td className="repo-stars">★ {repo.stargazers_count}</td>
                   <td>
                     <a
@@ -105,7 +122,7 @@ function Github() {
 
       <div className="background-glow"></div>
     </section>
-  )
+  );
 }
 
-export default Github
+export default Github;
