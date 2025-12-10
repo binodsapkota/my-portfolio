@@ -10,7 +10,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/binodsapkota/my-portfolio.git'
+                git branch: 'main', url: 'git@github.com:binodsapkota/my-portfolio.git'
             }
         }
 
@@ -36,3 +36,4 @@ pipeline {
         }
     }
 }
+
