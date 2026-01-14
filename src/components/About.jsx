@@ -1,4 +1,4 @@
-import avatar from '../assets/IMG_9527.jpg';
+import avatar from '../assets/IMG_9527.png';
 const About = () => {
   return (
     <section id="about" className="about-section bg-[#f0f2f5]">
