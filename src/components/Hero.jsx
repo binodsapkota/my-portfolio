@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import avatar from '../assets/IMG_9527.jpg';
+import avatar from '../assets/IMG_9527.png';
 
 const Hero = () => {
   const [currentText, setCurrentText] = useState(0)
