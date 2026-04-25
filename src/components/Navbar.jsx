@@ -52,13 +52,24 @@ const Navbar = () => {
         </h2>
 
         <div className={`nav-links ${isMobileMenuOpen ? "active" : ""}`}>
-          {["home", "about", "experience", "skills", "projects", "contact", "github"].map((item) => (
+          {[
+            { id: "home", label: "Home" },
+            { id: "about", label: "About" },
+            { id: "experience", label: "Experience" },
+            { id: "skills", label: "Skills" },
+            { id: "services", label: "Services" },
+            { id: "iot", label: "IoT" },
+            { id: "projects", label: "Projects" },
+            { id: "partnership", label: "Partners" },
+            { id: "contact", label: "Contact" },
+            { id: "github", label: "Github" },
+          ].map((item) => (
             <a
-              key={item}
-              onClick={() => scrollToSection(item)}
+              key={item.id}
+              onClick={() => scrollToSection(item.id)}
               className="nav-item"
             >
-              {item.charAt(0).toUpperCase() + item.slice(1)}
+              {item.label}
             </a>
           ))}
         </div>

@@ -5,7 +5,10 @@ import Hero from './components/Hero'
 import About from './components/About'
 import Experience from './components/experience'
 import Skills from './components/Skills'
+import Services from './components/Services'
+import IotSection from './components/IotSection'
 import Projects from './components/Projects'
+import Partnership from './components/Partnership'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import Github from './components/Github'
@@ -32,7 +35,7 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className="App app-shell">
       <header>
         <Navbar />
       </header>
@@ -47,24 +50,28 @@ function App() {
         </section>
 
         <section id="experience" aria-label="Work Experience and Roles">
-  <Experience />
-</section>
+          <Experience />
+        </section>
         
         <section id="skills" aria-label="Technical Skills and Expertise">
           <Skills />
         </section>
+
+        <Services />
+
+        <IotSection />
         
         <section id="projects" aria-label="Professional Projects and Work">
           <Projects />
         </section>
-        
+
+        <Partnership />
+
         <section id="contact" aria-label="Contact Information">
           <Contact />
 
         </section>
-        <section id="github" aria-label="GitHub Profile and Repositories">
-          <Github />
-        </section>
+        <Github />
 
       </main>
       

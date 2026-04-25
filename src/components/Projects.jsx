@@ -123,6 +123,46 @@ const Projects = () => {
       category: "enterprise",
       liveUrl: "#",
       githubUrl: "#"
+    },
+    {
+      id: 13,
+      title: "QR, RFID/NFC, webcam & barrier",
+      description: "Access control using QR, RFID and NFC card readers, and web cameras for verification. Raspberry Pi (or host PC) at the edge evaluates rules and drives barrier or security gate release in real time.",
+      image: "🚧",
+      technologies: ["Raspberry Pi", "QR", "RFID / NFC", "Webcams", "Barrier I/O", "ASP.NET / React"],
+      category: "iot",
+      liveUrl: "#",
+      githubUrl: "#"
+    },
+    {
+      id: 14,
+      title: "People count at barrier",
+      description: "People counting system integrated with the entrance barrier: reliable counts for occupancy, capacity, and flow analytics without manual tallying.",
+      image: "👣",
+      technologies: ["Sensors", "Raspberry Pi", "Counting logic", "Dashboard"],
+      category: "iot",
+      liveUrl: "#",
+      githubUrl: "#"
+    },
+    {
+      id: 15,
+      title: "Event management & auto visitor auth",
+      description: "Event platform where visitor lists, tickets, or invites drive automatic authorization at the gate—entrants are cleared as they arrive, keeping lines short and data consistent.",
+      image: "🎫",
+      technologies: ["Visitor API", "Pre-registration", "Gate integration", "Web app"],
+      category: "iot",
+      liveUrl: "#",
+      githubUrl: "#"
+    },
+    {
+      id: 16,
+      title: "Multi-vendor hardware & SDK",
+      description: "Integrations built on manufacturer SDKs: webcams, attendance and biometric machines, RFID/NFC readers, and security gate controllers—unified in your app layer so each site can mix vendors without a separate silo per device type.",
+      image: "🔧",
+      technologies: ["Vendor SDKs", "Webcams", "RFID / NFC", "Attendance", "Gates", "C# / Web API"],
+      category: "iot",
+      liveUrl: "#",
+      githubUrl: "#"
     }
   ];
 
@@ -131,7 +171,8 @@ const Projects = () => {
     { id: 'fintech', label: 'Fintech' },
     { id: 'enterprise', label: 'Enterprise' },
     { id: 'security', label: 'Security' },
-    { id: 'healthcare', label: 'Healthcare' }
+    { id: 'healthcare', label: 'Healthcare' },
+    { id: 'iot', label: 'IoT' }
   ];
 
   const filteredProjects = activeFilter === 'all'
@@ -139,7 +180,7 @@ const Projects = () => {
     : projects.filter(project => project.category === activeFilter);
 
   return (
-    <section id="projects" className="projects-section py-16 bg-gradient-to-br from-gray-50 to-indigo-50">
+    <section id="projects" className="projects-section bg-gradient-to-br from-gray-50 to-indigo-50">
       <div className="container mx-auto px-4">
         <div className="section-header text-center mb-12 animate-fade-in">
           <h2 className="section-title text-3xl font-bold text-gray-900">My Work & Projects</h2>

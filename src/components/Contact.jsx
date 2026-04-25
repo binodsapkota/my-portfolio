@@ -1,10 +1,6 @@
 import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { addTodo } from '../features/todo/todoSlice';
 
 const Contact = () => {
-  const todos = useSelector(state => state.todos);
-  const dispatch = useDispatch();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -27,8 +23,6 @@ const Contact = () => {
 
   const handleWhatsAppSubmit = (e) => {
     e.preventDefault();
-
-    // dispatch(addTodo(formData));
 
     // Format message for WhatsApp
     const whatsappMessage = `Hello Binod! I'm interested in working with you.
@@ -58,13 +52,13 @@ Sent from your portfolio website`;
   };
 
   return (
-    <section id="contact" className="contact-section py-16 bg-gradient-to-br from-gray-50 to-indigo-50">
+    <section id="contact" className="contact-section bg-gradient-to-br from-gray-50 to-indigo-50">
       <div className="container mx-auto px-4">
         <div className="section-header text-center mb-12 animate-fade-in">
           <h2 className="section-title text-3xl font-bold text-gray-900">Get In Touch</h2>
           <div className="section-divider w-16 h-1 bg-gradient-to-r from-indigo-500 to-purple-600 mx-auto my-4 rounded animate-scale-in"></div>
           <p className="section-description text-gray-600 max-w-2xl mx-auto">
-            Ready to start your next project? Let's discuss how I can help bring your ideas to life.
+            Projects, consulting, or a partnership and venture idea—reach out and I will respond with next steps. Prefer WhatsApp? Use the form and it opens a prefilled message.
           </p>
         </div>
 
@@ -200,7 +194,7 @@ Sent from your portfolio website`;
                     value={formData.subject}
                     onChange={handleChange}
                     required
-                    placeholder="e.g., Web App, Mobile App, API, Consultation"
+                    placeholder="e.g. Web app, API work, partnership or venture, consulting"
                     className="p-3 text-sm border-2 border-gray-200 rounded-lg focus:outline-none focus:border-indigo-600 focus:bg-white transition-all duration-300"
                   />
                 </div>

@@ -1,7 +1,7 @@
-import avatar from '../assets/IMG_9527.png';
+import avatar from "../assets/avatar.js"
 const About = () => {
   return (
-    <section id="about" className="about-section bg-[#f0f2f5]">
+    <section id="about" className="about-section">
       <div className="container">
         <div className="section-header animate-fade-in">
           <h2 className="section-title">About Me</h2>
@@ -17,7 +17,7 @@ const About = () => {
             <div className="profile-card animate-zoom-in">
              <div className="profile-avatar">
                 <div className="avatar-circle animate-pulse-glow">
-                  <img src={avatar} alt="Avatar" className="avatar-image" />
+                  <img src={avatar} alt="Binod Sapkota" className="avatar-image" width={80} height={80} />
                 </div>
                 <div className="status">
                   <span className="status-dot animate-pulse"></span>

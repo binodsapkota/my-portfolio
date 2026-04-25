@@ -48,7 +48,7 @@ function Github() {
   }
 
   return (
-    <section className="github-section bg-[#f0f2f5]">
+    <section id="github" className="github-section" aria-label="GitHub profile and repositories">
       <div className="section-header">
         <h2 className="section-title">GitHub Overview</h2>
         <div className="section-divider"></div>

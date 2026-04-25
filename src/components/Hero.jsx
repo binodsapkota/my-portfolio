@@ -1,9 +1,15 @@
 import { useState, useEffect } from "react"
-import avatar from '../assets/IMG_9527.png';
+import avatar from "../assets/avatar.js"
 
 const Hero = () => {
   const [currentText, setCurrentText] = useState(0)
-  const texts = ["Full-Stack Developer", "Engineering Lead", "Freelance Developer", "Solution Architect"]
+  const texts = [
+    "Full-Stack Developer",
+    "Engineering Lead",
+    "Freelance Developer",
+    "Solution Architect",
+    "IoT & Connected Systems",
+  ]
 
   useEffect(() => {
     const interval = setInterval(() => setCurrentText((prev) => (prev + 1) % texts.length), 2000)
@@ -38,7 +44,7 @@ const Hero = () => {
         </div>
         <div className="modern-hero-avatar">
           <div className="avatar-glass">
-            <img src={avatar} alt="Avatar" className="avatar-image" />
+            <img src={avatar} alt="Binod Sapkota" className="avatar-image" width={280} height={280} />
           </div>
         </div>
       </div>

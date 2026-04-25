@@ -1,178 +1,219 @@
+import { Cloud, Code2, Database, Palette, Radio } from "lucide-react"
+
+const skillCategories = [
+  {
+    category: "Backend & .NET",
+    accent: "indigo",
+    Icon: Code2,
+    skills: [
+      { name: "C#", level: 95 },
+      { name: "ASP.NET Core", level: 90 },
+      { name: "Web API", level: 90 },
+    ],
+  },
+  {
+    category: "Frontend & UI",
+    accent: "mint",
+    Icon: Palette,
+    skills: [
+      { name: "React", level: 85 },
+      { name: "JavaScript", level: 90 },
+      { name: "HTML / CSS", level: 85 },
+    ],
+  },
+  {
+    category: "Database & DevOps",
+    accent: "coral",
+    Icon: Database,
+    skills: [
+      { name: "SQL Server", level: 90 },
+      { name: "Git", level: 90 },
+      { name: "Azure DevOps", level: 85 },
+    ],
+  },
+  {
+    category: "Leadership & Cloud",
+    accent: "amber",
+    Icon: Cloud,
+    skills: [
+      { name: "Team leadership", level: 90 },
+      { name: "AWS", level: 80 },
+      { name: "Solution architecture", level: 90 },
+    ],
+  },
+  {
+    category: "IoT & edge",
+    accent: "cyan",
+    Icon: Radio,
+    skills: [
+      { name: "MQTT & messaging", level: 78 },
+      { name: "Device APIs & telemetry", level: 80 },
+      { name: "SDKs & device integration", level: 78 },
+    ],
+  },
+]
+
+const additionalSkills = [
+  { name: "Vendor SDKs & device APIs", category: "IoT & access" },
+  { name: "RFID, NFC, QR & webcams", category: "IoT & access" },
+  { name: "Raspberry Pi & edge gateways", category: "IoT & access" },
+  { name: "Barriers & security gates", category: "IoT & access" },
+  { name: "Attendance & biometric devices", category: "IoT & access" },
+  { name: "Event visitor & pre-registration", category: "IoT & access" },
+  { name: "People counting & occupancy", category: "IoT & access" },
+  { name: "MQTT, telemetry & dashboards", category: "IoT & access" },
+  { name: "Fintech & payments", category: "Industries & solutions" },
+  { name: "Core banking", category: "Industries & solutions" },
+  { name: "Insurance", category: "Industries & solutions" },
+  { name: "Healthcare", category: "Industries & solutions" },
+  { name: "Manufacturing & ERP", category: "Industries & solutions" },
+  { name: "Retail, POS & hospitality", category: "Industries & solutions" },
+  { name: "Real estate", category: "Industries & solutions" },
+  { name: "Education & HR systems", category: "Industries & solutions" },
+  { name: "Content & workflow CMS", category: "Industries & solutions" },
+  { name: "KYC & ID verification", category: "Security & trust" },
+  { name: "Webcam & biometric capture", category: "Security & trust" },
+  { name: "Security standards & hardening", category: "Security & trust" },
+  { name: "API & data protection", category: "Security & trust" },
+  { name: "Biometric (Futronic) scanners", category: "Hardware" },
+  { name: "Evolis & signature capture", category: "Hardware" },
+  { name: "Document & card readers", category: "Hardware" },
+  { name: "BLE beacons (where needed)", category: "Hardware" },
+  { name: "SQL Server", category: "Data & platform" },
+  { name: "PostgreSQL", category: "Data & platform" },
+  { name: "Stored procedures & T-SQL", category: "Data & platform" },
+  { name: "Query optimization", category: "Data & platform" },
+  { name: "Schema & reporting", category: "Data & platform" },
+  { name: "Code reviews", category: "Delivery & practice" },
+  { name: "Mentorship", category: "Delivery & practice" },
+  { name: "Solution architecture", category: "Delivery & practice" },
+  { name: "Cloud-native & DevOps", category: "Delivery & practice" },
+  { name: "Jira & delivery tooling", category: "Delivery & practice" },
+]
+
+const additionalExpertiseOrder = [
+  "IoT & access",
+  "Industries & solutions",
+  "Security & trust",
+  "Hardware",
+  "Data & platform",
+  "Delivery & practice",
+]
+
+const getCategoryColor = (category) => {
+  const colors = {
+    "IoT & access": "#22d3ee",
+    "Industries & solutions": "#34d399",
+    "Security & trust": "#fb7185",
+    Hardware: "#818cf8",
+    "Data & platform": "#fbbf24",
+    "Delivery & practice": "#a78bfa",
+  }
+  return colors[category] || "#818cf8"
+}
+
 const Skills = () => {
-  const skillCategories = [
-    {
-      category: "Backend & .NET",
-      icon: "⚙️",
-      color: "#667eea",
-      skills: [
-        { name: "C#", level: 95, icon: "🔷" },
-        { name: "ASP.NET Core", level: 90, icon: "🌐" },
-        { name: "Web API", level: 90, icon: "🔌" },
-      ],
-    },
-    {
-      category: "Frontend & UI",
-      icon: "🎨",
-      color: "#64ffda",
-      skills: [
-        { name: "ReactJS", level: 85, icon: "⚛️" },
-        { name: "JavaScript", level: 90, icon: "📜" },
-        { name: "HTML/CSS", level: 85, icon: "🌍" },
-      ],
-    },
-    {
-      category: "Database & DevOps",
-      icon: "🗄️",
-      color: "#ff6b6b",
-      skills: [
-        { name: "SQL Server", level: 90, icon: "💾" },
-        { name: "Git", level: 90, icon: "📝" },
-        { name: "Azure DevOps", level: 85, icon: "☁️" },
-      ],
-    },
-    {
-      category: "Leadership & Cloud",
-      icon: "🚀",
-      color: "#feca57",
-      skills: [
-        { name: "Team Leadership", level: 90, icon: "👥" },
-        { name: "AWS", level: 80, icon: "☁️" },
-        { name: "Solution Architecture", level: 90, icon: "🏗️" },
-      ],
-    },
-  ];
-
-  const additionalSkills = [
-    { name: "KYC Integrations", category: "Security" },
-    { name: "Futronic Scanners", category: "Hardware" },
-    { name: "Evolis Signature Pads", category: "Hardware" },
-    { name: "Webcam Verification", category: "Security" },
-    { name: "Fintech Solutions", category: "Domain" },
-    { name: "Healthcare Systems", category: "Domain" },
-    { name: "Manufacturing Apps", category: "Domain" },
-    { name: "Stored Procedures", category: "Database" },
-    { name: "Query Optimization", category: "Database" },
-    { name: "Security Standards", category: "Security" },
-    { name: "Code Reviews", category: "Leadership" },
-    { name: "Mentorship", category: "Leadership" },
-    { name: "Jira", category: "Tools" },
-    { name: "Cloud-Native", category: "Architecture" },
-  ];
-
-  const getCategoryColor = (category) => {
-    const colors = {
-      Security: "#ff6b6b",
-      Hardware: "#667eea",
-      Domain: "#64ffda",
-      Database: "#feca57",
-      Leadership: "#ff9ff3",
-      Tools: "#54a0ff",
-      Architecture: "#5f27cd",
-    };
-    return colors[category] || "#667eea";
-  };
-
   return (
-    <section id="skills" className="skills-section py-16 bg-gradient-to-br from-gray-50 to-indigo-50">
-      <div className="container mx-auto px-4">
-        <div className="section-header text-center mb-12 animate-fade-in">
-          <h2 className="section-title text-3xl font-bold text-gray-900">Skills & Technologies</h2>
-          <div className="section-divider w-16 h-1 bg-gradient-to-r from-indigo-500 to-purple-600 mx-auto my-4 rounded animate-scale-in"></div>
-          <p className="section-description text-gray-600 max-w-2xl mx-auto">
-            A comprehensive overview of my technical expertise and professional capabilities
+    <section id="skills" className="skills-section">
+      <div className="skills-section__veil" aria-hidden="true" />
+      <div className="skills-inner container mx-auto max-w-6xl px-4 sm:px-5">
+        <header className="skills-head">
+          <p className="skills-head__kicker">How I build</p>
+          <h2 className="skills-head__title">Skills and technologies</h2>
+          <p className="skills-head__lede">
+            Core stack depth across the services I ship—back end through edge devices—plus the domains and practices
+            I apply on real projects.
           </p>
-        </div>
+        </header>
 
-        <div className="skills-grid flex flex-wrap justify-center gap-4 mb-16">
-          {skillCategories.map((category, categoryIndex) => (
-            <div
-              key={categoryIndex}
-              className="skill-category-card bg-white rounded-xl p-4 shadow-lg border border-gray-100 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 animate-slide-up"
-              style={{ animationDelay: `${0.2 * categoryIndex}s`, "--category-color": category.color }}
-            >
-              <div className="category-header flex items-center gap-3 mb-4 pb-2 border-b-2 border-[var(--category-color)]">
-                <div className="category-icon text-2xl w-10 h-10 flex items-center justify-center bg-[var(--category-color)] text-white rounded-lg">
-                  {category.icon}
+        <div className="skills-core">
+          {skillCategories.map((cat, categoryIndex) => {
+            const Icon = cat.Icon
+            return (
+              <div
+                key={cat.category}
+                className={`skill-pillar skill-pillar--${cat.accent} animate-slide-up`}
+                style={{ animationDelay: `${0.06 * categoryIndex}s` }}
+              >
+                <div className="skill-pillar__head">
+                  <span className="skill-pillar__icon-wrap" aria-hidden="true">
+                    <Icon className="skill-pillar__lucide" strokeWidth={1.85} />
+                  </span>
+                  <h3 className="skill-pillar__name">{cat.category}</h3>
                 </div>
-                <h3 className="category-title text-lg font-semibold text-gray-800">{category.category}</h3>
-              </div>
-
-              <div className="skills-list flex flex-col gap-3">
-                {category.skills.map((skill, skillIndex) => (
-                  <div key={skillIndex} className="skill-item bg-gray-50 rounded-lg p-3 transition-all duration-300">
-                    <div className="skill-header flex justify-between items-center mb-2">
-                      <div className="skill-info flex items-center gap-2">
-                        <span className="skill-icon text-lg">{skill.icon}</span>
-                        <span className="skill-name text-sm font-medium text-gray-700">{skill.name}</span>
+                <ul className="skill-pillar__list">
+                  {cat.skills.map((skill) => (
+                    <li key={skill.name} className="skill-meter">
+                      <div className="skill-meter__row">
+                        <span className="skill-meter__label">{skill.name}</span>
+                        <span className="skill-meter__value">{skill.level}%</span>
                       </div>
-                      <span className="skill-level text-xs font-semibold text-white bg-[var(--category-color)] px-2 py-1 rounded-full">
-                        {skill.level}%
-                      </span>
-                    </div>
-                    <div className="skill-bar-container relative">
-                      <div className="skill-bar h-2 bg-gray-200 rounded-full overflow-hidden">
+                      <div className="skill-meter__track" role="presentation">
                         <div
-                          className="skill-progress h-full rounded-full animate-progress"
-                          style={{ width: `${skill.level}%`, backgroundColor: category.color }}
-                        ></div>
+                          className="skill-meter__fill"
+                          style={{ width: `${skill.level}%` }}
+                        />
                       </div>
-                    </div>
-                  </div>
-                ))}
+                    </li>
+                  ))}
+                </ul>
               </div>
-            </div>
-          ))}
+            )
+          })}
         </div>
 
-        <div className="additional-skills-section mt-12 pt-8 border-t border-gray-200">
-          <div className="section-header text-center mb-8 animate-fade-in">
-            <h3 className="text-2xl font-semibold text-gray-900">Additional Expertise & Specializations</h3>
-            <p className="text-gray-600 max-w-xl mx-auto">
-              Domain knowledge and specialized skills across various industries
-            </p>
-          </div>
+        <div className="skills-expertise">
+          <h3 className="skills-expertise__title">Additional expertise and specializations</h3>
+          <p className="skills-expertise__intro">
+            Cross-cutting focus: access and IoT, industry work, data, security, and how I collaborate on delivery.
+          </p>
 
-          <div className="skills-categories grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="skills-expertise__grid">
             {Object.entries(
               additionalSkills.reduce((acc, skill) => {
-                if (!acc[skill.category]) acc[skill.category] = [];
-                acc[skill.category].push(skill.name);
-                return acc;
+                if (!acc[skill.category]) acc[skill.category] = []
+                acc[skill.category].push(skill.name)
+                return acc
               }, {})
-            ).map(([category, skills], index) => (
-              <div
-                key={category}
-                className="expertise-category bg-white rounded-xl p-4 shadow-md border border-gray-100 transition-all duration-300 animate-slide-up"
-                style={{ animationDelay: `${0.2 * index}s` }}
-              >
-                <h4
-                  className="expertise-title text-sm font-semibold text-center mb-3"
-                  style={{ color: getCategoryColor(category) }}
+            )
+              .sort(
+                (a, b) =>
+                  additionalExpertiseOrder.indexOf(a[0]) -
+                  additionalExpertiseOrder.indexOf(b[0])
+              )
+              .map(([category, skills], index) => (
+                <div
+                  key={category}
+                  className="expertise-card animate-slide-up"
+                  style={{ animationDelay: `${0.04 * index}s` }}
                 >
-                  {category}
-                </h4>
-                <div className="expertise-tags flex flex-wrap gap-2 justify-center">
-                  {skills.map((skill, skillIndex) => (
-                    <span
-                      key={skillIndex}
-                      className="expertise-tag text-xs font-medium px-3 py-1 rounded-full border transition-all duration-300 hover:shadow-md hover:-translate-y-0.5"
-                      style={{
-                        backgroundColor: `${getCategoryColor(category)}20`,
-                        borderColor: getCategoryColor(category),
-                        color: getCategoryColor(category),
-                      }}
-                    >
-                      {skill}
-                    </span>
-                  ))}
+                  <h4
+                    className="expertise-card__label"
+                    style={{ color: getCategoryColor(category) }}
+                  >
+                    {category}
+                  </h4>
+                  <div className="expertise-card__chips">
+                    {skills
+                      .slice()
+                      .sort((x, y) => x.localeCompare(y))
+                      .map((skill) => (
+                        <span
+                          key={skill}
+                          className="expertise-chip"
+                          style={{ borderLeft: `3px solid ${getCategoryColor(category)}` }}
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
           </div>
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Skills;
+export default Skills
