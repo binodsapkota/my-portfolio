@@ -1,8 +1,4 @@
 User-agent: *
 Allow: /
 
-# Sitemap
 Sitemap: https://binodsapkota.com/sitemap.xml
-
-# Optional crawl delay for polite crawling
-Crawl-delay: 1

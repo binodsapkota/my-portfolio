@@ -1,30 +1,45 @@
 import { useId } from "react"
-import { Activity, CreditCard, Puzzle, QrCode, Router, UserCheck, Video, Users } from "lucide-react"
+import { Activity, CreditCard, Package, Puzzle, QrCode, Router, Tag, UserCheck, Video, Users } from "lucide-react"
 
 const systems = [
   {
-    title: "Access control & barrier",
-    text: "Multi-factor entry: QR codes, RFID and NFC card readers, and web cameras for capture or liveness—verified on a Raspberry Pi (or PC) at the edge, then barrier or security gate release when the rules pass.",
+    title: "Access control & barriers",
+    text: "Multi-factor entry using QR codes, RFID/NFC readers, and web cameras for identity verification. Edge nodes (Raspberry Pi or host PC) enforce access rules and trigger barrier or gate release in real time.",
     icon: QrCode,
   },
   {
-    title: "People count",
-    text: "People counting at the entrance using the barrier and sensors so occupancy and flow stay accurate for safety, reporting, and capacity limits.",
+    title: "Occupancy & people counting",
+    text: "Entrance-level people counting integrated with barrier systems to support occupancy limits, safety reporting, and traffic-flow analytics.",
     icon: Users,
   },
   {
-    title: "Events & visitor auth",
-    text: "Event management tied to the gate: visitors are authorized automatically on arrival from invite lists, tickets, or pre-registration—no manual check-in bottleneck at the entrance.",
+    title: "Events & visitor authorization",
+    text: "Event management integrated with gate access: pre-registered guests, tickets, and invite lists authorize entrants automatically on arrival.",
     icon: UserCheck,
   },
   {
-    title: "Hardware & vendor SDKs",
-    text: "I integrate many device types through their official or vendor SDKs: webcams, attendance and biometric machines, RFID/NFC readers, and security / barrier gate controllers—wired into your .NET and React stack for a single control plane.",
+    title: "Multi-vendor hardware integration",
+    text: "Unified integration of vendor SDKs for webcams, attendance terminals, biometric devices, RFID/NFC readers, and gate controllers—connected to a single .NET and React control plane.",
     icon: Puzzle,
+  },
+  {
+    title: "Warehouse asset tracking",
+    text: "IoT gateway deployments with RFID tags and zone readers for real-time location and movement of inventory, equipment, and pallets—synchronized with operational dashboards.",
+    icon: Package,
+  },
+  {
+    title: "ESL e-paper systems",
+    text: "End-to-end electronic shelf label solutions: tag hardware, wireless gateways, firmware, and application software for pricing, promotions, template rendering, and fleet management.",
+    icon: Tag,
   },
 ]
 
 const protocolTags = [
+  "ESL / e-paper",
+  "Wireless gateways",
+  "Firmware",
+  "IoT gateways",
+  "Warehouse asset tracking",
   "Raspberry Pi",
   "RFID & NFC readers",
   "Webcams",
@@ -46,17 +61,16 @@ const IotSection = () => {
       <div className="iot-wrap container mx-auto max-w-5xl px-4 sm:px-6">
         <header className="section-header text-center mb-10 md:mb-12">
           <p className="iot-kicker text-xs sm:text-sm font-semibold uppercase tracking-[0.2em] mb-3">
-            Gates &amp; venues
+            Connected systems
           </p>
-          <h2 className="section-title text-3xl md:text-4xl font-bold">IoT &amp; the edge</h2>
+          <h2 className="section-title text-3xl md:text-4xl font-bold">IoT &amp; edge computing</h2>
           <div
             className="section-divider iot-title-rule mx-auto my-4 rounded animate-scale-in"
             aria-hidden="true"
           />
           <p className="section-subtitle text-base md:text-lg max-w-2xl mx-auto leading-relaxed px-1">
-            On-site access and flow: cards, readers, and webcams; QR and events; all tied together with vendor
-            SDKs where it matters. From attendance terminals to security gates, one coherent edge-and-web
-            system.
+            Integrated on-site systems: access control, occupancy monitoring, warehouse tracking, and retail
+            infrastructure—unified through vendor SDKs, edge gateways, and a coherent web application layer.
           </p>
         </header>
 
@@ -128,11 +142,11 @@ const IotSection = () => {
             </svg>
           </div>
           <figcaption className="iot-showcase__caption">
-            Webcam · QR · RFID/NFC · people count · barrier / gate — integrated at the edge
+            Cameras · QR · RFID/NFC · occupancy · barriers &amp; gates — integrated at the edge
           </figcaption>
         </figure>
 
-        <h3 className="iot-block-heading">Systems</h3>
+        <h3 className="iot-block-heading">Solution areas</h3>
         <div className="iot-systems-grid">
           {systems.map((item, i) => {
             const Icon = item.icon
@@ -158,9 +172,9 @@ const IotSection = () => {
         </div>
 
         <div className="iot-stack-panel">
-          <p className="iot-stack-panel__label">Edge, gate &amp; web</p>
+          <p className="iot-stack-panel__label">Technology stack</p>
           <p className="iot-stack-panel__hint">
-            Cameras, readers, attendance units, and gates—connected with vendor SDKs and your web stack
+            Edge devices, gateways, and protocols integrated with ASP.NET, React, and cloud APIs
           </p>
           <ul className="iot-tag-list" aria-label="Technologies">
             {protocolTags.map((tag) => (
@@ -177,7 +191,7 @@ const IotSection = () => {
             className="btn-modern primary iot-cta__btn"
             onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
           >
-            Talk about a connected product
+            Discuss an IoT initiative
           </button>
         </div>
       </div>

@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react'
 import './App.css'
+import Seo from './components/Seo'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
 import Experience from './components/experience'
+import Education from './components/Education'
 import Skills from './components/Skills'
 import Services from './components/Services'
 import IotSection from './components/IotSection'
@@ -36,11 +38,15 @@ function App() {
 
   return (
     <div className="App app-shell">
+      <Seo />
+      <a href="#main-content" className="skip-link">
+        Skip to main content
+      </a>
       <header>
         <Navbar />
       </header>
-      
-      <main role="main">
+
+      <main id="main-content" role="main">
         <section id="home" aria-label="Introduction">
           <Hero />
         </section>
@@ -52,18 +58,20 @@ function App() {
         <section id="experience" aria-label="Work Experience and Roles">
           <Experience />
         </section>
+
+        <Education />
         
         <section id="skills" aria-label="Technical Skills and Expertise">
           <Skills />
         </section>
 
-        <Services />
-
-        <IotSection />
-        
         <section id="projects" aria-label="Professional Projects and Work">
           <Projects />
         </section>
+
+        <Services />
+
+        <IotSection />
 
         <Partnership />
 

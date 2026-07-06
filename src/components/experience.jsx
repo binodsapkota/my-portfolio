@@ -11,9 +11,9 @@ const experiences = [
     startDate: "Aug 2025",
     endDate: "Present",
     description: [
-      "Leading enterprise-grade application architecture and full-stack development.",
-      "Driving innovation with React, .NET, and cloud-native technologies.",
-      "Collaborating with cross-functional teams on scalable solutions.",
+      "Own enterprise application architecture and full-stack delivery across web and API layers.",
+      "Advance platform capabilities using React, .NET, and cloud-native patterns.",
+      "Partner with cross-functional stakeholders to deliver scalable, maintainable solutions.",
     ],
   },
   {
@@ -24,10 +24,10 @@ const experiences = [
     startDate: "Sept 2016",
     endDate: "June 2025",
     description: [
-      "Developed full-stack fintech and ERP platforms using ASP.NET Core and ReactJS.",
-      "Led MoneyFex (UK remittance platform) with 30K+ active users.",
-      "Integrated biometric KYC (Futronic, Evolis) and automated CI/CD pipelines.",
-      "Managed a 30+ person dev team, conducted code reviews, and interviews.",
+      "Led full-stack delivery of fintech and ERP platforms on ASP.NET Core and React.",
+      "Architected and scaled MoneyFex, a UK remittance platform serving 30,000+ active users.",
+      "Delivered biometric KYC integrations (Futronic, Evolis) and automated CI/CD pipelines.",
+      "Led a 30+ engineer team; owned code review standards, hiring, and technical direction.",
     ],
   },
   {
@@ -38,9 +38,9 @@ const experiences = [
     startDate: "Dec 2012",
     endDate: "July 2016",
     description: [
-      "Built enterprise applications for banks and insurance companies.",
-      "Developed reusable components using ASP.NET MVC and SQL Server.",
-      "Optimized complex queries and participated in architecture discussions.",
+      "Built enterprise applications for banking and insurance clients.",
+      "Developed reusable components and modules on ASP.NET MVC and SQL Server.",
+      "Optimized database performance and contributed to solution architecture decisions.",
     ],
   },
 ]
@@ -57,7 +57,8 @@ export default function Experience() {
           <h2 className="section-title">Professional Experience</h2>
           <div className="section-divider animate-scale-in"></div>
           <p className="section-subtitle">
-            A journey through leadership, architecture, and full-stack development across top tech firms.
+            Thirteen years of progressive responsibility in software architecture, team leadership, and
+            full-stack delivery across Canada and Nepal.
           </p>
         </div>
 

@@ -1,21 +1,28 @@
 {
-  "name": "Binod Sapkota - Software Engineering Leader Portfolio",
+  "name": "Binod Sapkota — Full-Stack Developer & Engineering Lead",
   "short_name": "Binod Sapkota",
-  "description": "Professional portfolio of Binod Sapkota - Software Engineering Leader with 10+ years experience in .NET and React development",
+  "description": "Professional portfolio of Binod Sapkota — Full-Stack Developer, Engineering Lead, and IoT specialist. Enterprise .NET, React, fintech, and connected systems.",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "background_color": "#667eea",
   "theme_color": "#667eea",
   "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "/vite.svg",
+      "src": "/logo.svg",
       "sizes": "any",
       "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/og-image.png",
+      "sizes": "512x512",
+      "type": "image/png",
       "purpose": "any maskable"
     }
   ],
-  "categories": ["business", "productivity", "utilities"],
+  "categories": ["business", "productivity"],
   "lang": "en-CA",
   "dir": "ltr"
 }

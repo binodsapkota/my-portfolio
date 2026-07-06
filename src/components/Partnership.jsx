@@ -2,29 +2,29 @@ import { Handshake, LineChart, Lightbulb, Mail, MessageSquare, Users2 } from "lu
 
 const focusAreas = [
   {
-    title: "Product & GTM",
-    text: "Shared roadmap from prototype to market—where technology choices and first customers actually match.",
+    title: "Product & go-to-market",
+    text: "Align technical roadmap with market entry—from prototype through early customer validation.",
     icon: LineChart,
   },
   {
     title: "Technical partnership",
-    text: "Longer-term build-and-own relationships: you bring domain, I bring delivery depth across web, data, and devices.",
+    text: "Long-term build partnerships where domain expertise and engineering depth combine across web, data, and devices.",
     icon: Handshake,
   },
   {
-    title: "New ventures & ideas",
-    text: "Early-stage exploration: validation, architecture, and honest feasibility before anyone signs a cap table.",
+    title: "New ventures",
+    text: "Early-stage feasibility, architecture assessment, and honest technical evaluation before formal commitment.",
     icon: Lightbulb,
   },
   {
-    title: "People & trust",
-    text: "Introductory, confidential calls. Chemistry and clarity first—formal terms only when it makes sense for both sides.",
+    title: "Relationship & fit",
+    text: "Initial confidential discussions focused on alignment of goals, expectations, and working style.",
     icon: Users2,
   },
 ]
 
 const VENTURE_EMAIL = "er.binod2016@gmail.com"
-const VENTURE_SUBJECT = "Partnership or new venture discussion"
+const VENTURE_SUBJECT = "Partnership or venture inquiry"
 
 const Partnership = () => {
   const mailtoHref = `mailto:${VENTURE_EMAIL}?subject=${encodeURIComponent(VENTURE_SUBJECT)}`
@@ -34,12 +34,12 @@ const Partnership = () => {
       <div className="partnership-section__aurora" aria-hidden="true" />
       <div className="partnership-wrap container mx-auto max-w-5xl px-4 sm:px-6">
         <header className="partnership-header text-center mb-10 md:mb-12">
-          <p className="partnership-eyebrow">Beyond client work</p>
-          <h2 className="partnership-title">Partnership and new ventures</h2>
+          <p className="partnership-eyebrow">Strategic collaboration</p>
+          <h2 className="partnership-title">Partnerships &amp; ventures</h2>
           <p className="partnership-subtitle max-w-2xl mx-auto">
-            I am open to thoughtful conversations about <strong>business partnerships</strong>,{" "}
-            <strong>joint products</strong>, and <strong>new venture opportunities</strong>—where there is
-            a clear problem, aligned expectations, and room to build something durable together.
+            I welcome structured conversations regarding <strong>business partnerships</strong>,{" "}
+            <strong>joint product development</strong>, and <strong>new venture opportunities</strong>—where
+            objectives are clear, expectations are aligned, and there is potential for durable value.
           </p>
         </header>
 
@@ -64,8 +64,8 @@ const Partnership = () => {
 
         <div className="partnership-footnote">
           <p>
-            This is not legal or investment advice. If we move forward, details belong in the right documents with
-            the right advisors—here, we are simply finding fit.
+            This section is for exploratory discussion only and does not constitute legal or investment advice.
+            Formal arrangements should be documented with appropriate professional counsel.
           </p>
         </div>
 
@@ -76,17 +76,16 @@ const Partnership = () => {
             onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
           >
             <MessageSquare className="w-4 h-4" strokeWidth={2.25} />
-            Open the contact form
+            Contact form
           </button>
-          <a
-            href={mailtoHref}
-            className="partnership-cta__email btn-modern outline"
-          >
+          <a href={mailtoHref} className="partnership-cta__email btn-modern outline">
             <Mail className="w-4 h-4" strokeWidth={2.25} />
-            Email: partnership or venture idea
+            Email: partnership inquiry
           </a>
         </div>
-        <p className="partnership-hint">Mention &quot;partnership&quot; or &quot;venture&quot; in your subject or first line so I can triage it quickly.</p>
+        <p className="partnership-hint">
+          Please include &quot;partnership&quot; or &quot;venture&quot; in the subject line for efficient routing.
+        </p>
       </div>
     </section>
   )

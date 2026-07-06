@@ -1,4 +1,4 @@
-import { Cloud, Code2, Database, Palette, Radio } from "lucide-react"
+import { Cloud, Code2, Database, Palette, Radio, Sparkles } from "lucide-react"
 
 const skillCategories = [
   {
@@ -51,6 +51,16 @@ const skillCategories = [
       { name: "SDKs & device integration", level: 78 },
     ],
   },
+  {
+    category: "AI-assisted development",
+    accent: "violet",
+    Icon: Sparkles,
+    skills: [
+      { name: "Cursor", level: 88 },
+      { name: "Claude", level: 85 },
+      { name: "GitHub Copilot", level: 82 },
+    ],
+  },
 ]
 
 const additionalSkills = [
@@ -89,6 +99,8 @@ const additionalSkills = [
   { name: "Solution architecture", category: "Delivery & practice" },
   { name: "Cloud-native & DevOps", category: "Delivery & practice" },
   { name: "Jira & delivery tooling", category: "Delivery & practice" },
+  { name: "Cursor, Claude & Copilot", category: "Delivery & practice" },
+  { name: "AI-accelerated development", category: "Delivery & practice" },
 ]
 
 const additionalExpertiseOrder = [
@@ -118,11 +130,11 @@ const Skills = () => {
       <div className="skills-section__veil" aria-hidden="true" />
       <div className="skills-inner container mx-auto max-w-6xl px-4 sm:px-5">
         <header className="skills-head">
-          <p className="skills-head__kicker">How I build</p>
-          <h2 className="skills-head__title">Skills and technologies</h2>
+          <p className="skills-head__kicker">Technical foundation</p>
+          <h2 className="skills-head__title">Skills &amp; technologies</h2>
           <p className="skills-head__lede">
-            Core stack depth across the services I ship—back end through edge devices—plus the domains and practices
-            I apply on real projects.
+            Depth across backend, frontend, data, cloud, IoT, and AI-assisted delivery—the stack and practices
+            applied on production systems.
           </p>
         </header>
 
@@ -163,9 +175,9 @@ const Skills = () => {
         </div>
 
         <div className="skills-expertise">
-          <h3 className="skills-expertise__title">Additional expertise and specializations</h3>
+          <h3 className="skills-expertise__title">Additional expertise</h3>
           <p className="skills-expertise__intro">
-            Cross-cutting focus: access and IoT, industry work, data, security, and how I collaborate on delivery.
+            Industry domains, hardware integration, security, data platform work, and delivery practices.
           </p>
 
           <div className="skills-expertise__grid">

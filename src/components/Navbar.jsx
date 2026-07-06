@@ -47,31 +47,58 @@ const Navbar = () => {
   return (
     <nav className={`modern-navbar ${isScrolled ? "scrolled" : ""}`}>
       <div className="nav-inner">
-        <h2 className="nav-logo">
+        <button
+          type="button"
+          className="nav-logo"
+          onClick={() => scrollToSection("home")}
+          aria-label="Go to home"
+        >
           Binod<span className="nav-highlight"> Sapkota</span>
-        </h2>
+        </button>
 
         <div className={`nav-links ${isMobileMenuOpen ? "active" : ""}`}>
-          {[
-            { id: "home", label: "Home" },
-            { id: "about", label: "About" },
-            { id: "experience", label: "Experience" },
-            { id: "skills", label: "Skills" },
-            { id: "services", label: "Services" },
-            { id: "iot", label: "IoT" },
-            { id: "projects", label: "Projects" },
-            { id: "partnership", label: "Partners" },
-            { id: "contact", label: "Contact" },
-            { id: "github", label: "Github" },
-          ].map((item) => (
-            <a
-              key={item.id}
-              onClick={() => scrollToSection(item.id)}
-              className="nav-item"
-            >
-              {item.label}
-            </a>
-          ))}
+          <div className="nav-links__primary">
+            {[
+              { id: "about", label: "About" },
+              { id: "experience", label: "Experience" },
+              { id: "education", label: "Education" },
+              { id: "skills", label: "Skills" },
+              { id: "projects", label: "Projects" },
+              { id: "services", label: "Services" },
+              { id: "iot", label: "IoT" },
+              { id: "partnership", label: "Partners" },
+            ].map((item) => (
+              <a
+                key={item.id}
+                href={`#${item.id}`}
+                onClick={(e) => {
+                  e.preventDefault()
+                  scrollToSection(item.id)
+                }}
+                className="nav-item"
+              >
+                {item.label}
+              </a>
+            ))}
+          </div>
+          <div className="nav-links__cta" aria-label="Contact and code">
+            {[
+              { id: "contact", label: "Contact" },
+              { id: "github", label: "GitHub" },
+            ].map((item) => (
+              <a
+                key={item.id}
+                href={`#${item.id}`}
+                onClick={(e) => {
+                  e.preventDefault()
+                  scrollToSection(item.id)
+                }}
+                className="nav-item nav-item--cta"
+              >
+                {item.label}
+              </a>
+            ))}
+          </div>
         </div>
 
         <div

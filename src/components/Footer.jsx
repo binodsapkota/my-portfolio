@@ -7,32 +7,34 @@ const Footer = () => {
         <div className="footer-content grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6 animate-fade-in">
           <div className="footer-section h-full bg-gray-800 rounded-xl p-4 shadow-lg border border-gray-700 transition-all duration-300 hover:shadow-xl hover:scale-105 hover:border-indigo-500 hover:border-glow animate-slide-up">
             <h3 className="text-base font-semibold text-white mb-2">Binod Sapkota</h3>
-            <p className="text-xs text-gray-300">Full-Stack Developer & Engineering Lead</p>
-            <p className="text-xs text-gray-300">Smartworld Infotech Solutions Inc</p>
-            <p className="text-xs text-gray-300">Available for freelance and consulting</p>
+            <p className="text-xs text-gray-300">Full-Stack Developer &amp; Engineering Lead</p>
+            <p className="text-xs text-gray-300">Thornhill, Ontario, Canada</p>
+            <p className="text-xs text-gray-300">Freelance &amp; consulting available</p>
           </div>
           
           <div className="footer-section h-full bg-gray-800 rounded-xl p-4 shadow-lg border border-gray-700 transition-all duration-300 hover:shadow-xl hover:scale-105 hover:border-indigo-500 hover:border-glow animate-slide-up" style={{ animationDelay: '0.2s' }}>
             <h4 className="text-sm font-semibold text-white mb-2">Quick Links</h4>
             <ul className="footer-links flex flex-col gap-1">
               <li><a href="#about" className="text-xs text-gray-300 hover:text-yellow-400 hover:scale-105 transition-all duration-300">About</a></li>
+              <li><a href="#experience" className="text-xs text-gray-300 hover:text-yellow-400 hover:scale-105 transition-all duration-300">Experience</a></li>
+              <li><a href="#education" className="text-xs text-gray-300 hover:text-yellow-400 hover:scale-105 transition-all duration-300">Education</a></li>
               <li><a href="#skills" className="text-xs text-gray-300 hover:text-yellow-400 hover:scale-105 transition-all duration-300">Skills</a></li>
+              <li><a href="#projects" className="text-xs text-gray-300 hover:text-yellow-400 hover:scale-105 transition-all duration-300">Projects</a></li>
               <li><a href="#services" className="text-xs text-gray-300 hover:text-yellow-400 hover:scale-105 transition-all duration-300">Services</a></li>
               <li><a href="#iot" className="text-xs text-gray-300 hover:text-yellow-400 hover:scale-105 transition-all duration-300">IoT</a></li>
-              <li><a href="#projects" className="text-xs text-gray-300 hover:text-yellow-400 hover:scale-105 transition-all duration-300">Projects</a></li>
               <li><a href="#partnership" className="text-xs text-gray-300 hover:text-yellow-400 hover:scale-105 transition-all duration-300">Partners</a></li>
               <li><a href="#contact" className="text-xs text-gray-300 hover:text-yellow-400 hover:scale-105 transition-all duration-300">Contact</a></li>
+              <li><a href="#github" className="text-xs text-gray-300 hover:text-yellow-400 hover:scale-105 transition-all duration-300">GitHub</a></li>
             </ul>
           </div>
           
           <div className="footer-section h-full bg-gray-800 rounded-xl p-4 shadow-lg border border-gray-700 transition-all duration-300 hover:shadow-xl hover:scale-105 hover:border-indigo-500 hover:border-glow animate-slide-up" style={{ animationDelay: '0.4s' }}>
             <h4 className="text-sm font-semibold text-white mb-2">Services</h4>
             <ul className="footer-links flex flex-col gap-1">
-              <li className="text-xs text-gray-300">Freelance and contract work</li>
-              <li className="text-xs text-gray-300">Custom Web Applications</li>
-              <li className="text-xs text-gray-300">Enterprise Solutions</li>
-              <li className="text-xs text-gray-300">API Development</li>
-              <li className="text-xs text-gray-300">Technical Consultation</li>
+              <li className="text-xs text-gray-300">Freelance &amp; contract engagements</li>
+              <li className="text-xs text-gray-300">Enterprise web applications</li>
+              <li className="text-xs text-gray-300">System integration &amp; APIs</li>
+              <li className="text-xs text-gray-300">Technical architecture</li>
               <li className="text-xs text-gray-300">IoT &amp; device integration</li>
             </ul>
           </div>
@@ -82,7 +84,7 @@ const Footer = () => {
         
         <div className="footer-bottom text-center">
           <div className="footer-divider w-16 h-1 bg-gradient-to-r from-indigo-500 to-purple-600 mx-auto mb-4 rounded animate-scale-in"></div>
-          <p className="text-xs text-gray-300">&copy; {currentYear} Binod Sapkota. </p>
+          <p className="text-xs text-gray-300">&copy; {currentYear} Binod Sapkota. All rights reserved.</p>
         </div>
       </div>
     </footer>

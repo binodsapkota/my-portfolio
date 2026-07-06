@@ -11,53 +11,60 @@ import {
 const categories = [
   {
     title: "Web & enterprise applications",
-    blurb: "Scalable, secure line-of-business software—from greenfield products to long-running systems that need to evolve without drama.",
-    bullets: ["ASP.NET Core & React", "Databases & reporting", "Multi-tenant & role rules"],
+    blurb:
+      "Secure, scalable line-of-business software—from new product builds to modernizing established systems with minimal disruption.",
+    bullets: ["ASP.NET Core & React", "Data layer & reporting", "AI-assisted delivery (Cursor, Claude, Copilot)"],
     icon: Code2,
     accent: "indigo",
   },
   {
     title: "APIs & system integration",
-    blurb: "Clear boundaries between services, honest contracts, and solid integrations with payment, identity, and legacy backends.",
-    bullets: ["REST & Web API design", "Third-party & vendor hooks", "Queue-friendly patterns"],
+    blurb:
+      "Well-defined service boundaries and reliable integrations with payment providers, identity systems, and legacy backends.",
+    bullets: ["REST & Web API design", "Third-party & vendor integration", "Event-driven and queue-based patterns"],
     icon: Cable,
     accent: "violet",
   },
   {
     title: "IoT, access & on-site hardware",
-    blurb: "Physical sites that need more than a browser: readers, cameras, barriers, and edge logic wired into your app stack.",
-    bullets: ["RFID, NFC, QR, webcams", "Raspberry Pi & vendor SDKs", "Gates, attendance, people flow"],
+    blurb:
+      "Connected environments where physical devices—readers, cameras, gates, and sensors—integrate with your application stack.",
+    bullets: ["RFID, NFC, QR, and webcams", "Raspberry Pi & vendor SDKs", "Gates, attendance, and occupancy"],
     icon: Radio,
     accent: "cyan",
   },
   {
-    title: "Security, ID & device capture",
-    blurb: "KYC-style flows, scanners, and capture hardware folded into a compliant, auditable product experience.",
-    bullets: ["KYC & verification UX", "Biometric & signature hardware", "Hardening & standards alignment"],
+    title: "Security, identity & device capture",
+    blurb:
+      "KYC workflows, biometric capture, and hardware-backed verification within auditable, compliance-aware products.",
+    bullets: ["KYC & identity verification", "Biometric & signature hardware", "Security hardening & standards"],
     icon: ShieldCheck,
     accent: "rose",
   },
   {
-    title: "Architecture & platform leadership",
-    blurb: "From diagram to release train: design reviews, team alignment, and pragmatic choices that still work six months later.",
-    bullets: ["Solution & cloud architecture", "Code review & mentoring", "Roadmaps with delivery risk in mind"],
+    title: "Architecture & technical leadership",
+    blurb:
+      "Solution design, engineering standards, and delivery planning that remain effective as products and teams scale.",
+    bullets: ["Solution & cloud architecture", "Code review & mentorship", "Roadmaps with delivery risk assessment"],
     icon: Blocks,
     accent: "amber",
   },
   {
-    title: "Ongoing support & product care",
-    blurb: "Stability, performance, and small wins that compound—so your users trust the system every day, not just at launch.",
-    bullets: ["Performance & reliability", "Upgrades & refactors", "On-call friendly runbooks"],
+    title: "Support & continuous improvement",
+    blurb:
+      "Post-launch stability, performance optimization, and incremental enhancement to sustain long-term product value.",
+    bullets: ["Performance & reliability", "Upgrades & refactoring", "Operational runbooks & support"],
     icon: Headphones,
     accent: "emerald",
   },
   {
-    title: "Freelance & contract work",
-    blurb: "Independent engagements on top of my day job: scoped builds, advisory sprints, or hands-on coding when you need senior help without a long hiring cycle.",
+    title: "Freelance & contract engagements",
+    blurb:
+      "Defined-scope engagements for organizations that need senior engineering capacity without a lengthy hiring process.",
     bullets: [
-      "Fixed milestones and clear SOWs",
-      "Remote-first, global time zones",
-      "Same standards as enterprise—just a shorter path to yes",
+      "Clear milestones and statements of work",
+      "Remote delivery across time zones",
+      "Enterprise-grade standards and documentation",
     ],
     icon: Briefcase,
     accent: "sky",
@@ -71,16 +78,18 @@ const Services = () => {
       <div className="services-section__glow" aria-hidden="true" />
       <div className="services-wrap container mx-auto max-w-6xl px-4 sm:px-6">
         <div className="services-intro">
-          <p className="services-eyebrow">What I work on</p>
-          <h2 className="services-title">Services that ship</h2>
+          <p className="services-eyebrow">Capabilities</p>
+          <h2 className="services-title">Services</h2>
           <p className="services-lede">
-            <strong>Freelancing and consulting</strong> sit alongside my full-time work—engagements built around
-            <strong> real products</strong>, not slide decks. Pick a lane or blend a few: I design, build, and own
-            outcomes with you.
+            I provide <strong>consulting and contract delivery</strong> alongside full-time work—focused on
+            <strong> production outcomes</strong>, not presentations. Engagements can target a single capability
+            or combine several as your initiative requires.
           </p>
           <div className="services-cta-strip" role="status">
-            <span className="services-pill">Freelance and contract-friendly</span>
-            <span className="services-pill services-pill--dim">Global · Remote · Evenings and weekends, capacity permitting</span>
+            <span className="services-pill">Freelance &amp; contract engagements</span>
+            <span className="services-pill services-pill--dim">
+              Remote · Global · Availability evenings and weekends, capacity permitting
+            </span>
           </div>
         </div>
 
@@ -110,13 +119,13 @@ const Services = () => {
         </div>
 
         <div className="services-bottom-cta">
-          <p>Have a different shape of project? Describe the goals and we will map them to a plan.</p>
+          <p>Have a specific requirement? Share your objectives and I will outline a practical approach.</p>
           <button
             type="button"
             className="btn-modern primary"
             onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
           >
-            Start a conversation
+            Request a consultation
           </button>
         </div>
       </div>
