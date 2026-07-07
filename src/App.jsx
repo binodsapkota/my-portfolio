@@ -3,27 +3,24 @@ import './App.css'
 import Seo from './components/Seo'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
-import About from './components/About'
-import Experience from './components/experience'
-import Education from './components/Education'
-import Skills from './components/Skills'
+import Expertise from './components/Expertise'
+import Projects from './components/Projects'
 import Services from './components/Services'
 import IotSection from './components/IotSection'
-import Projects from './components/Projects'
+import Experience from './components/experience'
+import Skills from './components/Skills'
+import About from './components/About'
+import Education from './components/Education'
 import Partnership from './components/Partnership'
+import Github from './components/Github'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
-import Github from './components/Github'
 
 function App() {
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    // Simulate loading time
-    const timer = setTimeout(() => {
-      setIsLoading(false)
-    }, 1000)
-
+    const timer = setTimeout(() => setIsLoading(false), 800)
     return () => clearTimeout(timer)
   }, [])
 
@@ -31,7 +28,7 @@ function App() {
     return (
       <div className="loading-screen" role="status" aria-label="Loading portfolio">
         <div className="loader"></div>
-        <p>Loading Portfolio...</p>
+        <p>Loading portfolio…</p>
       </div>
     )
   }
@@ -47,42 +44,33 @@ function App() {
       </header>
 
       <main id="main-content" role="main">
-        <section id="home" aria-label="Introduction">
-          <Hero />
-        </section>
-        
-        <section id="about" aria-label="About Binod Sapkota">
-          <About />
-        </section>
+        {/* 1 — Positioning */}
+        <Hero />
 
-        <section id="experience" aria-label="Work Experience and Roles">
-          <Experience />
-        </section>
+        {/* 2 — What I deliver */}
+        <Expertise />
 
-        <Education />
-        
-        <section id="skills" aria-label="Technical Skills and Expertise">
-          <Skills />
-        </section>
+        {/* 3 — Proof of work */}
+        <Projects />
 
-        <section id="projects" aria-label="Professional Projects and Work">
-          <Projects />
-        </section>
-
+        {/* 4 — How clients engage */}
         <Services />
-
         <IotSection />
 
+        {/* 5 — Track record */}
+        <Experience />
+        <Skills />
+
+        {/* 6 — Credentials & context */}
+        <About />
+        <Education />
+
+        {/* 7 — Extended opportunities */}
         <Partnership />
-
-        <section id="contact" aria-label="Contact Information">
-          <Contact />
-
-        </section>
         <Github />
-
+        <Contact />
       </main>
-      
+
       <footer>
         <Footer />
       </footer>

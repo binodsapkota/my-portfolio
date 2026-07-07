@@ -1,5 +1,19 @@
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
+  const currentYear = new Date().getFullYear()
+
+  const links = [
+    { href: "#expertise", label: "Expertise" },
+    { href: "#projects", label: "Portfolio" },
+    { href: "#services", label: "Services" },
+    { href: "#iot", label: "IoT" },
+    { href: "#experience", label: "Experience" },
+    { href: "#skills", label: "Skills" },
+    { href: "#about", label: "Background" },
+    { href: "#education", label: "Education" },
+    { href: "#partnership", label: "Partnerships" },
+    { href: "#contact", label: "Contact" },
+    { href: "#github", label: "GitHub" },
+  ]
 
   return (
     <footer className="footer py-8 bg-gradient-to-br from-gray-900 to-indigo-900">
@@ -8,38 +22,44 @@ const Footer = () => {
           <div className="footer-section h-full bg-gray-800 rounded-xl p-4 shadow-lg border border-gray-700 transition-all duration-300 hover:shadow-xl hover:scale-105 hover:border-indigo-500 hover:border-glow animate-slide-up">
             <h3 className="text-base font-semibold text-white mb-2">Binod Sapkota</h3>
             <p className="text-xs text-gray-300">Full-Stack Developer &amp; Engineering Lead</p>
+            <p className="text-xs text-gray-300">Enterprise · Fintech · IoT</p>
             <p className="text-xs text-gray-300">Thornhill, Ontario, Canada</p>
-            <p className="text-xs text-gray-300">Freelance &amp; consulting available</p>
           </div>
-          
-          <div className="footer-section h-full bg-gray-800 rounded-xl p-4 shadow-lg border border-gray-700 transition-all duration-300 hover:shadow-xl hover:scale-105 hover:border-indigo-500 hover:border-glow animate-slide-up" style={{ animationDelay: '0.2s' }}>
-            <h4 className="text-sm font-semibold text-white mb-2">Quick Links</h4>
+
+          <div
+            className="footer-section h-full bg-gray-800 rounded-xl p-4 shadow-lg border border-gray-700 transition-all duration-300 hover:shadow-xl hover:scale-105 hover:border-indigo-500 hover:border-glow animate-slide-up"
+            style={{ animationDelay: "0.2s" }}
+          >
+            <h4 className="text-sm font-semibold text-white mb-2">Navigate</h4>
             <ul className="footer-links flex flex-col gap-1">
-              <li><a href="#about" className="text-xs text-gray-300 hover:text-yellow-400 hover:scale-105 transition-all duration-300">About</a></li>
-              <li><a href="#experience" className="text-xs text-gray-300 hover:text-yellow-400 hover:scale-105 transition-all duration-300">Experience</a></li>
-              <li><a href="#education" className="text-xs text-gray-300 hover:text-yellow-400 hover:scale-105 transition-all duration-300">Education</a></li>
-              <li><a href="#skills" className="text-xs text-gray-300 hover:text-yellow-400 hover:scale-105 transition-all duration-300">Skills</a></li>
-              <li><a href="#projects" className="text-xs text-gray-300 hover:text-yellow-400 hover:scale-105 transition-all duration-300">Projects</a></li>
-              <li><a href="#services" className="text-xs text-gray-300 hover:text-yellow-400 hover:scale-105 transition-all duration-300">Services</a></li>
-              <li><a href="#iot" className="text-xs text-gray-300 hover:text-yellow-400 hover:scale-105 transition-all duration-300">IoT</a></li>
-              <li><a href="#partnership" className="text-xs text-gray-300 hover:text-yellow-400 hover:scale-105 transition-all duration-300">Partners</a></li>
-              <li><a href="#contact" className="text-xs text-gray-300 hover:text-yellow-400 hover:scale-105 transition-all duration-300">Contact</a></li>
-              <li><a href="#github" className="text-xs text-gray-300 hover:text-yellow-400 hover:scale-105 transition-all duration-300">GitHub</a></li>
+              {links.map((link) => (
+                <li key={link.href}>
+                  <a href={link.href} className="text-xs text-gray-300 hover:text-yellow-400 transition-all duration-300">
+                    {link.label}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
-          
-          <div className="footer-section h-full bg-gray-800 rounded-xl p-4 shadow-lg border border-gray-700 transition-all duration-300 hover:shadow-xl hover:scale-105 hover:border-indigo-500 hover:border-glow animate-slide-up" style={{ animationDelay: '0.4s' }}>
-            <h4 className="text-sm font-semibold text-white mb-2">Services</h4>
+
+          <div
+            className="footer-section h-full bg-gray-800 rounded-xl p-4 shadow-lg border border-gray-700 transition-all duration-300 hover:shadow-xl hover:scale-105 hover:border-indigo-500 hover:border-glow animate-slide-up"
+            style={{ animationDelay: "0.4s" }}
+          >
+            <h4 className="text-sm font-semibold text-white mb-2">What I deliver</h4>
             <ul className="footer-links flex flex-col gap-1">
-              <li className="text-xs text-gray-300">Freelance &amp; contract engagements</li>
-              <li className="text-xs text-gray-300">Enterprise web applications</li>
-              <li className="text-xs text-gray-300">System integration &amp; APIs</li>
-              <li className="text-xs text-gray-300">Technical architecture</li>
-              <li className="text-xs text-gray-300">IoT &amp; device integration</li>
+              <li className="text-xs text-gray-300">Enterprise &amp; fintech platforms</li>
+              <li className="text-xs text-gray-300">IoT &amp; edge systems</li>
+              <li className="text-xs text-gray-300">Security &amp; KYC integration</li>
+              <li className="text-xs text-gray-300">Architecture &amp; team leadership</li>
+              <li className="text-xs text-gray-300">Consulting &amp; contract delivery</li>
             </ul>
           </div>
-          
-          <div className="footer-section h-full bg-gray-800 rounded-xl p-4 shadow-lg border border-gray-700 transition-all duration-300 hover:shadow-xl hover:scale-105 hover:border-indigo-500 hover:border-glow animate-slide-up" style={{ animationDelay: '0.6s' }}>
+
+          <div
+            className="footer-section h-full bg-gray-800 rounded-xl p-4 shadow-lg border border-gray-700 transition-all duration-300 hover:shadow-xl hover:scale-105 hover:border-indigo-500 hover:border-glow animate-slide-up"
+            style={{ animationDelay: "0.6s" }}
+          >
             <h4 className="text-sm font-semibold text-white mb-2">Connect</h4>
             <ul className="footer-links flex flex-col gap-1">
               <li>
@@ -47,9 +67,9 @@ const Footer = () => {
                   href="https://www.linkedin.com/in/binod-sapkota-0a193475/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-xs text-gray-300 hover:text-yellow-400 hover:scale-105 transition-all duration-300 flex items-center gap-1"
+                  className="text-xs text-gray-300 hover:text-yellow-400 transition-all duration-300"
                 >
-                  <span className="text-sm">💼</span> LinkedIn
+                  LinkedIn
                 </a>
               </li>
               <li>
@@ -57,38 +77,32 @@ const Footer = () => {
                   href="https://github.com/binodsapkota"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-xs text-gray-300 hover:text-yellow-400 hover:scale-105 transition-all duration-300 flex items-center gap-1"
+                  className="text-xs text-gray-300 hover:text-yellow-400 transition-all duration-300"
                 >
-                  <span className="text-sm">🐙</span> GitHub
+                  GitHub
                 </a>
               </li>
               <li>
-                <a
-                  href="mailto:er.binod2016@gmail.com"
-                  className="text-xs text-gray-300 hover:text-yellow-400 hover:scale-105 transition-all duration-300 flex items-center gap-1"
-                >
-                  <span className="text-sm">📧</span> Email
+                <a href="mailto:er.binod2016@gmail.com" className="text-xs text-gray-300 hover:text-yellow-400 transition-all duration-300">
+                  er.binod2016@gmail.com
                 </a>
               </li>
               <li>
-                <a
-                  href="#contact"
-                  className="text-xs text-gray-300 hover:text-yellow-400 hover:scale-105 transition-all duration-300 flex items-center gap-1"
-                >
-                  <span className="text-sm">💬</span> Contact Form
+                <a href="#contact" className="text-xs text-gray-300 hover:text-yellow-400 transition-all duration-300">
+                  Contact form
                 </a>
               </li>
             </ul>
           </div>
         </div>
-        
+
         <div className="footer-bottom text-center">
-          <div className="footer-divider w-16 h-1 bg-gradient-to-r from-indigo-500 to-purple-600 mx-auto mb-4 rounded animate-scale-in"></div>
+          <div className="footer-divider w-16 h-1 bg-gradient-to-r from-indigo-500 to-purple-600 mx-auto mb-4 rounded animate-scale-in" />
           <p className="text-xs text-gray-300">&copy; {currentYear} Binod Sapkota. All rights reserved.</p>
         </div>
       </div>
     </footer>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

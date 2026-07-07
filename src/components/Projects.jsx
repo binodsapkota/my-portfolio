@@ -322,9 +322,9 @@ const Projects = () => {
         <header className="proj-hero animate-fade-in">
           <h2 className="proj-hero__title">Portfolio</h2>
           <p className="proj-hero__lede">
-            Selected engagements across fintech, enterprise, security, healthcare, and IoT. Featured work
-            reflects leadership and technical depth; additional projects demonstrate breadth. Many client
-            systems are confidential—select &quot;Request details&quot; for a private discussion.
+            Representative engagements across fintech, enterprise, security, healthcare, and IoT.
+            Featured work reflects technical leadership; the full grid shows breadth. Confidential builds
+            are available on request.
           </p>
         </header>
 

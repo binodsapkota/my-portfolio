@@ -1,5 +1,19 @@
 import { useState, useEffect } from "react"
 
+const NAV_PRIMARY = [
+  { id: "expertise", label: "Expertise" },
+  { id: "projects", label: "Portfolio" },
+  { id: "services", label: "Services" },
+  { id: "iot", label: "IoT" },
+  { id: "experience", label: "Experience" },
+  { id: "skills", label: "Skills" },
+]
+
+const NAV_CTA = [
+  { id: "contact", label: "Contact" },
+  { id: "github", label: "GitHub" },
+]
+
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -8,9 +22,7 @@ const Navbar = () => {
   )
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
-    }
+    const handleScroll = () => setIsScrolled(window.scrollY > 50)
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
@@ -21,31 +33,21 @@ const Navbar = () => {
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)")
-    const handleChange = (e) => {
-      setTheme(e.matches ? "dark" : "light")
-    }
+    const handleChange = (e) => setTheme(e.matches ? "dark" : "light")
     mediaQuery.addEventListener("change", handleChange)
     return () => mediaQuery.removeEventListener("change", handleChange)
   }, [])
 
-  const toggleTheme = () => {
-    setTheme(theme === "light" ? "dark" : "light")
-  }
-
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId)
     if (element) {
-      const topOffset = element.offsetTop
-      window.scrollTo({
-        top: topOffset, 
-        behavior: 'smooth'
-      })
+      window.scrollTo({ top: element.offsetTop, behavior: "smooth" })
     }
     setIsMobileMenuOpen(false)
   }
 
   return (
-    <nav className={`modern-navbar ${isScrolled ? "scrolled" : ""}`}>
+    <nav className={`modern-navbar ${isScrolled ? "scrolled" : ""}`} aria-label="Primary">
       <div className="nav-inner">
         <button
           type="button"
@@ -58,16 +60,7 @@ const Navbar = () => {
 
         <div className={`nav-links ${isMobileMenuOpen ? "active" : ""}`}>
           <div className="nav-links__primary">
-            {[
-              { id: "about", label: "About" },
-              { id: "experience", label: "Experience" },
-              { id: "education", label: "Education" },
-              { id: "skills", label: "Skills" },
-              { id: "projects", label: "Projects" },
-              { id: "services", label: "Services" },
-              { id: "iot", label: "IoT" },
-              { id: "partnership", label: "Partners" },
-            ].map((item) => (
+            {NAV_PRIMARY.map((item) => (
               <a
                 key={item.id}
                 href={`#${item.id}`}
@@ -82,10 +75,7 @@ const Navbar = () => {
             ))}
           </div>
           <div className="nav-links__cta" aria-label="Contact and code">
-            {[
-              { id: "contact", label: "Contact" },
-              { id: "github", label: "GitHub" },
-            ].map((item) => (
+            {NAV_CTA.map((item) => (
               <a
                 key={item.id}
                 href={`#${item.id}`}
@@ -101,20 +91,21 @@ const Navbar = () => {
           </div>
         </div>
 
-        <div
+        <button
+          type="button"
           className={`hamburger ${isMobileMenuOpen ? "active" : ""}`}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-expanded={isMobileMenuOpen}
+          aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
         >
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
+          <span />
+          <span />
+          <span />
+        </button>
 
-        <div className="theme-toggle" onClick={toggleTheme}>
-          <span className="theme-icon">
-            {theme === "light" ? "☀️" : "🌙"}
-          </span>
-        </div>
+        <button type="button" className="theme-toggle" onClick={() => setTheme(theme === "light" ? "dark" : "light")} aria-label="Toggle theme">
+          <span className="theme-icon">{theme === "light" ? "☀️" : "🌙"}</span>
+        </button>
       </div>
     </nav>
   )
